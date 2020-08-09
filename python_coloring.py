@@ -1,7 +1,7 @@
 import random
 
-input_file = open("files/sample_tree").readlines()
-output_file = open("files/sample_tree_new", "w")
+input_file = open("files/12_ch/sample_tree").readlines()
+output_file = open("files/12_ch/sample_tree_new", "w")
 
 for i in range(len(input_file) - 6):  # Write begining
     output_file.write(input_file[i])

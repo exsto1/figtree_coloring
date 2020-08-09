@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-data = open("files/CL0057_no_RHH_ali.nexus.mcmc").readlines()
+data = open("files/4_ch/CL0057_no_RHH_ali.nexus.mcmc").readlines()
 data = [i for i in data if "[" not in i]
 data = data[1:]
 data = [i.split("\t") for i in data]
