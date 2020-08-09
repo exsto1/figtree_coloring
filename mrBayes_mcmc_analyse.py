@@ -20,7 +20,7 @@ for i in range(len(x_data)):
         break
 
 
-plt.figure()
+plt.figure(figsize=(15, 8))
 plt.title("Average standard deviation of split frequencies")
 plt.xlabel("Generation")
 plt.ylabel("Standard deviation")
