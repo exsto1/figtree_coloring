@@ -1,13 +1,20 @@
 import random
 
-input_file = open("files/4_ch/CL0057_no_RHH_ali.nexus.mcmc").readlines()
-output_file = open("files/4_ch/CL0057_no_RHH_ali_new.nexus.mcmc", "w")
+input_file = open("files/4_ch/CL0057_no_RHH_ali.nexus.con.tre").readlines()
+output_file = open("files/4_ch/CL0057_no_RHH_ali_new.nexus.con.tre", "w")
 
-for i in range(len(input_file) - 6):  # Write begining
+tree_index = 0  # Get line with tree
+for i in range(len(input_file)):
+    if "tree con_50_majrule" in input_file[i]:
+        full_tree = list(input_file[i])
+        tree_index = i
+        break
+
+
+for i in range(tree_index):  # Write begining
     output_file.write(input_file[i])
 
 
-full_tree = list(input_file[-6])  # Get tree part
 
 ###
 ids = []
@@ -85,7 +92,7 @@ output_file.write("".join(full_tree))
 ###
 
 
-for i in range(len(input_file) - 5, len(input_file)):  # write end
+for i in range(tree_index + 1, len(input_file)):  # write end
     output_file.write(input_file[i])
 
 output_file.close()

@@ -21,8 +21,10 @@ for i in range(len(x_data)):
 
 
 plt.figure(figsize=(15, 8))
-plt.title("Average standard deviation of split frequencies")
+plt.title("Average standard deviation of split frequencies\n4 chains long run")
 plt.xlabel("Generation")
 plt.ylabel("Standard deviation")
 plt.plot(x_data[min_index:], y_data[min_index:])
+plt.savefig("plot_4.svg")
+plt.tight_layout()
 plt.show()
