@@ -1,7 +1,7 @@
 import random
 
-input_file = open("files/4_ch/CL0057_no_RHH_ali.nexus.con.tre").readlines()
-output_file = open("files/4_ch/CL0057_no_RHH_ali_new.nexus.con.tre", "w")
+input_file = open("files/new_4_ch/CL0057_true_no_RHH_2_rep.nexus.con.tre").readlines()
+output_file = open("files/new_4_ch/CL0057_true_no_RHH_2_rep_new.nexus.con.tre", "w")
 
 tree_index = 0  # Get line with tree
 for i in range(len(input_file)):
@@ -13,7 +13,6 @@ for i in range(len(input_file)):
 
 for i in range(tree_index):  # Write begining
     output_file.write(input_file[i])
-
 
 
 ###
