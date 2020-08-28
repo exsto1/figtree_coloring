@@ -1,7 +1,17 @@
 import random
+import os
+import argparse
 
-input_file = open("files/new_4_ch/CL0057_true_no_RHH_2_rep.nexus.con.tre").readlines()
-output_file = open("files/new_4_ch/CL0057_true_no_RHH_2_rep_new.nexus.con.tre", "w")
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-i", "--input", help="path to .con.tre file from MrBayes (sumt command after finished run - more in MrBayes manual)")
+parser.add_argument("-o", "--output", help="output file name")
+
+args = parser.parse_args()
+
+
+input_file = open(os.path.abspath(args.input)).readlines()
+output_file = open(os.path.abspath(args.output), "w")
 
 tree_index = 0  # Get line with tree
 for i in range(len(input_file)):
